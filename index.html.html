@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures mobile responsiveness -->
+  <title>For Sneha 🎉🌌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: radial-gradient(circle, #2a004d, #4a2672, #6a2e9d);
+      overflow: hidden;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle, rgba(42, 0, 77, 0.9), rgba(74, 38, 114, 0.7));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 10;
+      transition: opacity 2s ease;
+    }
+
+    #intro {
+      font-family: monospace;
+      color: #ffd700;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      text-align: center;
+      white-space: pre-wrap;
+      text-shadow: 0 0 10px #ffeb3b;
+    }
+
+    .start-btn {
+      background: linear-gradient(90deg, #ff69b4, #ffd700);
+      color: #fff;
+      padding: 20px 40px;
+      font-size: 1.8em;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 0 30px #ff69b4;
+      animation: partyGlow 2s infinite alternate, portalFade 3s ease-in-out forwards;
+      font-family: 'Great Vibes', cursive;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes partyGlow {
+      from { box-shadow: 0 0 10px #ff69b4; }
+      to { box-shadow: 0 0 40px #ff69b4, 0 0 80px #ffd700; }
+    }
+
+    @keyframes portalFade {
+      0% { opacity: 1; }
+      100% { opacity: 0.8; transform: translateX(-50%) scale(1.1); background: radial-gradient(#ff69b4, #ffd700); }
+    }
+
+    .galaxy {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      margin: -300px 0 0 -300px;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.1), transparent 70%);
+      border-radius: 50%;
+      animation: gentleSwirl 20s linear infinite, partyPulse 3s infinite alternate;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes gentleSwirl {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes partyPulse {
+      from { transform: scale(1); opacity: 0.7; }
+      to { transform: scale(1.1); opacity: 0.9; }
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .stars div {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #ffd700;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: starTwinkle 2s infinite alternate;
+      box-shadow: 0 0 5px #ffd700;
+    }
+
+    @keyframes starTwinkle {
+      from { opacity: 0.3; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1.2); }
+    }
+
+    .aurora {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(255, 215, 0, 0.2), rgba(106, 46, 157, 0.2));
+      animation: auroraDrift 12s infinite alternate ease-in-out;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes auroraDrift {
+      0% { background-position: 0% 50%; }
+      to { background-position: 100% 50%; }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      opacity: 0.8;
+      animation: confettiFall 4s infinite ease-in-out;
+      z-index: 2;
+    }
+
+    @keyframes confettiFall {
+      0% { transform: translateY(-100vh) rotate(0deg); opacity: 0; }
+      20% { opacity: 0.8; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    .balloon {
+      position: absolute;
+      width: 30px;
+      height: 40px;
+      background: radial-gradient(circle, #ff69b4, #ffd700);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: balloonFloat 6s infinite ease-in-out;
+      z-index: 2;
+    }
+
+    @keyframes balloonFloat {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 0.9; }
+      100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+    }
+
+    .message {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      z-index: 3;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      animation: gentleFade 2s ease-in-out;
+    }
+
+    @keyframes gentleFade {
+      from { opacity: 0; transform: translate(-50%, -60%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
+    .message h1 {
+      font-size: 3.5em;
+      font-family: 'Great Vibes', cursive;
+      background: linear-gradient(to right, #ffd700, #ff69b4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px #ffd700, 0 0 30px #ff69b4;
+      margin-bottom: 20px;
+    }
+
+    .message p {
+      font-size: 1.4em;
+      color: #ffe4b5;
+      max-width: 80%;
+      text-shadow: 0 0 10px #ffe4b5;
+    }
+
+    #sneha-canvas {
+      display: none;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 4;
+    }
+
+    .sneha-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      max-width: 50%; /* Increased size for better visibility */
+      opacity: 0;
+      z-index: 5;
+      transition: all 2s ease;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #ffd700, 0 0 30px #ff69b4; /* Enhanced glow */
+    }
+
+    .sneha-image.show {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    .secret-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      font-size: 2.5em; /* Larger text for impact */
+      font-family: 'Great Vibes', cursive;
+      color: #ff69b4; /* Changed to match the uplifting theme */
+      text-shadow: 0 0 20px #ffd700, 0 0 30px #ffeb3b;
+      opacity: 0;
+      z-index: 6;
+      transition: all 2s ease;
+    }
+
+    .secret-message.show {
+      transform: translate(-50%, -50%) scale(1.2); /* Slight zoom for excitement */
+      opacity: 1;
+    }
+
+    .firework {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: explode 1.5s ease-out forwards;
+      z-index: 7;
+    }
+
+    @keyframes explode {
+      0% { transform: scale(0); opacity: 1; }
+      50% { transform: scale(5); opacity: 0.8; background: radial-gradient(circle, #ffd700, #ff69b4, #ffeb3b); }
+      100% { transform: scale(10); opacity: 0; }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .message h1 { font-size: 2em; }
+      .message p { font-size: 1em; }
+      .sneha-image { max-width: 80%; }
+      .start-btn { padding: 10px 20px; font-size: 1.2em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay" id="overlay">
+    <div id="intro">_</div>
+    <button class="start-btn" onclick="revealPortal()">Unlock the Party for Sneha! 🎉</button>
+  </div>
+
+  <canvas id="sneha-canvas"></canvas>
+
+  <div class="stars" id="stars"></div>
+  <div class="galaxy"></div>
+  <div class="aurora"></div>
+
+  <div class="message" id="message">
+    <h1>Happy Birthday, Sneha! 🌌</h1>
+    <p>Sneha, let’s crank up the cosmic party! 🎵  
+       Your vibe sets the dance floor ablaze with stardust beats,  
+       filling the galaxy with laughter and love!  
+       This year, let’s celebrate with fireworks and fun! 🎉✨</p>
+  </div>
+
+  <!-- Replace with your uploaded image URL -->
+  <img src="img.jpeg" alt="Sneha's Party" class="sneha-image" id="sneha-image">
+  <div class="secret-message" id="secret-message">To Sneha, Our Shining Star—Dance Like the Universe is Yours! 💖</div>
+
+  <audio id="music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mp3">
+  </audio>
+  <audio id="cheer" src="https://www.soundjay.com/humans/cheer-01.mp3"></audio>
+
+  <script>
+    // Type intro text
+    let introText = "🎉 A celestial party awaits...\nUnlock with love: S-N-E-H-A...\nIgniting the birthday glow...";
+    let i = 0;
+    function typeIntro() {
+      if (i < introText.length) {
+        document.getElementById('intro').innerHTML = introText.slice(0, i+1) + "_";
+        i++;
+        setTimeout(typeIntro, 50);
+      } else {
+        document.getElementById('intro').innerHTML = introText;
+      }
+    }
+    typeIntro();
+
+    function revealPortal() {
+      const overlay = document.getElementById('overlay');
+      overlay.style.opacity = 0;
+      setTimeout(() => overlay.style.display = 'none', 2000);
+
+      document.getElementById('message').style.display = 'flex';
+      document.getElementById('music').play();
+
+      // Confetti
+      for (let i = 0; i < 50; i++) {
+        let confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.top = Math.random() * -50 + "vh";
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 80%)`;
+        confetti.style.animationDuration = (3 + Math.random() * 2) + "s";
+        confetti.style.animationDelay = Math.random() * 5 + "s";
+        document.body.appendChild(confetti);
+      }
+
+      // Balloons
+      for (let i = 0; i < 20; i++) {
+        let balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.top = Math.random() * 100 + "vh";
+        balloon.style.animationDuration = (5 + Math.random() * 2) + "s";
+        document.body.appendChild(balloon);
+      }
+
+      // Confetti stars
+      for (let i = 0; i < 30; i++) {
+        let star = document.createElement('div');
+        star.className = 'confetti-star';
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.animationDuration = (4 + Math.random() * 2) + "s";
+        document.body.appendChild(star);
+      }
+
+      // Glowing orbs
+      for (let i = 0; i < 20; i++) {
+        let orb = document.createElement('div');
+        orb.className = 'orb';
+        orb.style.left = Math.random() * 100 + "vw";
+        orb.style.top = Math.random() * 100 + "vh";
+        orb.style.animationDelay = Math.random() * 5 + "s";
+        document.body.appendChild(orb);
+      }
+
+      // Floral confetti
+      for (let i = 0; i < 20; i++) {
+        let floral = document.createElement('div');
+        floral.className = 'floral-confetti';
+        floral.style.left = Math.random() * 100 + "vw";
+        floral.style.top = Math.random() * 100 + "vh";
+        floral.style.animationDuration = (5 + Math.random() * 2) + "s";
+        document.body.appendChild(floral);
+      }
+
+      // Stars interaction
+      const stars = document.getElementById('stars');
+      for (let i = 0; i < 150; i++) {
+        const star = document.createElement('div');
+        star.style.top = Math.random() * 100 + '%';
+        star.style.left = Math.random() * 100 + '%';
+        star.onclick = () => {
+          let confettiStar = document.createElement('div');
+          confettiStar.className = 'confetti-star';
+          confettiStar.style.left = star.style.left;
+          confettiStar.style.top = star.style.top;
+          confettiStar.style.animationDuration = "2s";
+          document.body.appendChild(confettiStar);
+          playSound('pop');
+        };
+        stars.appendChild(star);
+      }
+
+      // Random firework
+      setInterval(() => {
+        if (Math.random() < 0.3) {
+          const firework = document.createElement('div');
+          firework.className = 'firework';
+          firework.style.left = Math.random() * 100 + "vw";
+          firework.style.top = Math.random() * 100 + "vh";
+          document.body.appendChild(firework);
+          for (let i = 0; i < 20; i++) {
+            setTimeout(() => {
+              const spark = document.createElement('div');
+              spark.className = 'firework';
+              spark.style.left = (parseFloat(firework.style.left) + Math.random() * 100 - 50) + "vw";
+              spark.style.top = (parseFloat(firework.style.top) + Math.random() * 100 - 50) + "vh";
+              spark.style.animationDelay = (i * 0.05) + "s";
+              document.body.appendChild(spark);
+            }, i * 50);
+          }
+        }
+      }, 5000);
+
+      animateSneha();
+    }
+
+    function animateSneha() {
+      const canvas = document.getElementById("sneha-canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      canvas.style.display = "block";
+      console.log("Canvas initialized:", canvas.width, canvas.height); // Debug
+
+      const targetPositions = [];
+      ctx.font = "bold 250px Great Vibes";
+      ctx.fillStyle = "transparent";
+      ctx.textAlign = "center";
+      ctx.fillText("Sneha", canvas.width / 2, canvas.height / 2);
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      for (let y = 0; y < canvas.height; y += 5) {
+        for (let x = 0; x < canvas.width; x += 5) {
+          const index = (y * canvas.width + x) * 4;
+          if (imageData.data[index + 3] > 150) {
+            targetPositions.push({ x, y });
+          }
+        }
+      }
+      console.log("Target positions count:", targetPositions.length); // Debug
+      if (targetPositions.length === 0) {
+        console.error("No target positions found! Using fallback positions.");
+        for (let i = 0; i < 10; i++) {
+          targetPositions.push({ x: canvas.width / 2 + (Math.random() - 0.5) * 200, y: canvas.height / 2 + (Math.random() - 0.5) * 200 });
+        }
+      }
+
+      const particles = [];
+      const particleCount = 600;
+      for (let i = 0; i < particleCount; i++) {
+        const target = targetPositions[Math.floor(Math.random() * targetPositions.length)] || { x: canvas.width / 2, y: canvas.height / 2 };
+        particles.push({
+          x: Math.random() * (canvas.width + 600) - 300,
+          y: Math.random() * (canvas.height + 600) - 300,
+          vx: (Math.random() - 0.5) * 20,
+          vy: (Math.random() - 0.5) * 20,
+          target: target,
+          life: 0,
+          maxLife: 120,
+          trail: []
+        });
+      }
+      console.log("Particles initialized:", particles.length); // Debug
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p, index) => {
+          p.life++;
+          const progress = Math.min(p.life / p.maxLife, 1);
+          const targetX = p.target ? p.target.x : canvas.width / 2;
+          const targetY = p.target ? p.target.y : canvas.height / 2;
+          p.x += (targetX - p.x) * 0.06 + p.vx * (1 - progress);
+          p.y += (targetY - p.y) * 0.06 + p.vy * (1 - progress);
+
+          p.trail.push({ x: p.x, y: p.y });
+          if (p.trail.length > 5) p.trail.shift();
+
+          ctx.beginPath();
+          ctx.strokeStyle = `hsl(${Math.random() * 360}, 70%, ${70 + Math.random() * 20}%)`;
+          ctx.lineWidth = 1;
+          for (let i = 0; i < p.trail.length - 1; i++) {
+            ctx.moveTo(p.trail[i].x, p.trail[i].y);
+            ctx.lineTo(p.trail[i + 1].x, p.trail[i + 1].y);
+          }
+          ctx.stroke();
+
+          ctx.fillStyle = `hsl(${Math.random() * 360}, 70%, ${70 + Math.random() * 20}%)`;
+          ctx.beginPath();
+          const size = 2 + Math.random() * 2;
+          ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = ctx.fillStyle;
+
+          if (progress >= 1) {
+            particles.splice(index, 1);
+          }
+        });
+
+        if (particles.length > 0) {
+          requestAnimationFrame(draw);
+        } else {
+          setTimeout(() => {
+            const snehaImage = document.getElementById('sneha-image');
+            const secretMessage = document.getElementById('secret-message');
+            snehaImage.classList.add('show');
+            secretMessage.classList.add('show');
+            document.getElementById('cheer').play(); // Play cheer sound
+            setTimeout(() => secretMessage.classList.remove('show'), 5000); // Longer display
+          }, 2000);
+        }
+        console.log("Particles remaining:", particles.length); // Debug
+      }
+
+      draw();
+    }
+
+    function playSound(type) {
+      const audio = new Audio();
+      audio.src = type === 'pop' ? 'https://www.soundjay.com/buttons/beep-01a.mp3' : 'https://www.soundjay.com/human/wish-01.mp3';
+      audio.volume = 0.5;
+      audio.play();
+    }
+  </script>
+</body>
+</html>
